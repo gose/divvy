@@ -1,0 +1,100 @@
+{
+  "settings": {
+    "number_of_shards": 2,
+    "number_of_replicas": 0,
+    "refresh_interval": "30s",
+    "translog.durability": "async"
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "id": {
+          "type": "long"
+        },
+        "start_time": {
+          "type": "date"
+        },
+        "end_time": {
+          "type": "date"
+        },
+        "day_of_week": {
+          "type": "keyword"
+        },
+        "bike_id": {
+          "type": "long"
+        },
+        "duration_min": {
+          "type": "double"
+        },
+        "user_type": {
+          "type": "keyword"
+        },
+        "gender": {
+          "type": "keyword"
+        },
+        "birth_year": {
+          "type": "long"
+        },
+        "age": {
+          "type": "long"
+        },
+        "from_station_id": {
+          "type": "long"
+        },
+        "from_station_name": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "from_station_city": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "from_station_geo": {
+          "type": "geo_point"
+        },
+        "from_station_total_docks": {
+          "type": "long"
+        },
+        "to_station_id": {
+          "type": "long"
+        },
+        "to_station_name": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "to_station_city": {
+          "type": "text",
+          "fields": {
+            "raw": {
+              "type": "keyword"
+            }
+          }
+        },
+        "to_station_geo": {
+          "type": "geo_point"
+        },
+        "to_station_total_docks": {
+          "type": "long"
+        },
+        "distance_between_stations_miles": {
+          "type": "double"
+        },
+        "average_speed_miles_per_hour": {
+          "type": "double"
+        }
+      }
+    }
+  }
+}
